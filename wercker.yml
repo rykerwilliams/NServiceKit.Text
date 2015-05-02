@@ -1,0 +1,9 @@
+box: floydpink/box-mono
+build:
+    steps:
+    -  script:
+        name: Build NServiceKit!
+        code: ./build.sh
+    - script:
+        name: Run Unit Tests
+        code: .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll /noshadow
