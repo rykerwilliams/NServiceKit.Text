@@ -1,9 +1,12 @@
 box: floydpink/mono@0.0.6
 build:
     steps:
-    -  script:
-        name: Build NServiceKit!
-        code: ./build.sh
+    - script:
+        name: Restore nuget
+        code: export EnableNuGetPackageRestore=true
+    - script:
+        name: build
+        code: xbuild ./src/NServiceKit.Text.sln /p:TargetFramework=net40 /p:Configuration=Release
     - script:
         name: Run Unit Tests
         code: .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll /noshadow
