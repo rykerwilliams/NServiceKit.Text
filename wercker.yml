@@ -1,4 +1,4 @@
-box: floydpink/box-mono
+box: wercker/box-ubuntu12.04-webessentials
 build:
     steps:
     -  script:
