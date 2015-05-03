@@ -1,6 +1,6 @@
-mono ./src/.nuget/NuGet.exe install nunit.runners -Version 2.6.3
+mono ./src/.nuget/NuGet.exe install nunit.runners -Version 2.6.4 -OutputDirectory ./nuget-packages
 runTest(){
-	mono ./nuget-packages/NUnit.Runners.2.6.3/tools/nunit-console.exe -noxml -nodots -labels -stoponerror $@
+	mono ./nuget-packages/NUnit.Runners.2.6.4/tools/nunit-console.exe -noxml -nodots -labels -stoponerror $@
 	if [ $? -ne 0 ]
 	then
 		exit 1
