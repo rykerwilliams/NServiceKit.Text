@@ -5,5 +5,6 @@ build:
         name: Restore nuget
         code: |
               export EnableNuGetPackageRestore=true
+              echo $EnableNuGetPackageRestore
               xbuild ./src/NServiceKit.Text.sln /p:TargetFramework=net40 /p:Configuration=Release
               .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll
