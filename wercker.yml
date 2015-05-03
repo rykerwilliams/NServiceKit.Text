@@ -7,5 +7,4 @@ build:
               export EnableNuGetPackageRestore=true
               echo $EnableNuGetPackageRestore
               xbuild ./src/NServiceKit.Text.sln /p:TargetFramework=net40 /p:Configuration=Release
-	      # This installs nunit.runner in the nuget-packages dir and then runs the tests.
               .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll
