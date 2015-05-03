@@ -3,7 +3,6 @@ build:
     steps:
     -  script:
         name: Build NServiceKit!
-        code: ./build.sh
-    - script:
-        name: Run Unit Tests
-        code: .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll /noshadow
+        code: export EnableNuGetPackageRestore=true
+              xbuild ./src/NServiceKit.Text.sln /p:TargetFramework=net40 /p:Configuration=Release
+              .ci/nunit.sh ./tests/NServiceKit.Text.Tests/bin/Release/NServiceKit.Text.Tests.dll /noshadow
